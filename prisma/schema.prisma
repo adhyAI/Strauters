@@ -1,0 +1,74 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id                String   @id @default(cuid())
+  auth0Sub          String   @unique
+  email             String   @unique
+  stripeCustomerId  String?  @unique
+  subscriptionTier  String   @default("free") // "free" | "pro"
+  subscriptionStatus String  @default("inactive")
+  teams             Team[]
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model Team {
+  id                  String   @id @default(cuid())
+  owner               User     @relation(fields: [ownerId], references: [id])
+  ownerId             String
+  hackathonDescription String  @db.Text
+  members             TeamMember[]
+  ideaRuns            IdeaRun[]
+  createdAt           DateTime @default(now())
+}
+
+model TeamMember {
+  id             String   @id @default(cuid())
+  team           Team     @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  teamId         String
+  name           String
+  githubUsername String
+  bio            String?  @db.Text
+  githubSummary  Json?
+}
+
+model IdeaRun {
+  id               String   @id @default(cuid())
+  team             Team     @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  teamId           String
+  panelOutputs     Json
+  synthesizedIdeas Json
+  selectedIdea     SelectedIdea?
+  createdAt        DateTime @default(now())
+}
+
+model SelectedIdea {
+  id                 String   @id @default(cuid())
+  ideaRun            IdeaRun  @relation(fields: [ideaRunId], references: [id], onDelete: Cascade)
+  ideaRunId          String   @unique
+  chosenIdea         Json
+  templateId         String
+  deliverableMarkdown String  @db.Text
+  deployment         Deployment?
+  createdAt          DateTime @default(now())
+}
+
+model Deployment {
+  id             String   @id @default(cuid())
+  selectedIdea   SelectedIdea @relation(fields: [selectedIdeaId], references: [id], onDelete: Cascade)
+  selectedIdeaId String   @unique
+  templateId     String
+  injectedConfig Json
+  workDir        String?
+  cliLog         String?  @db.Text
+  deployedUrl    String?
+  status         String   @default("pending") // "pending" | "provisioning" | "live" | "failed"
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}

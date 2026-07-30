@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "project": {
+    "catalog": "prod",
+    "initializedAt": "2026-07-30T21:56:38.495Z",
+    "merchantDisplayName": null,
+    "merchantId": "acct_1Tz1u0Q0tWCn5K7t",
+    "projectId": "project_61V8Ptmrog4M5bd8B16V8PrM6SSQCPwAY3c5lc3rECDw",
+    "projectName": "Auth0XStripe"
+  },
+  "providers": {
+    "auth0": {
+      "accountRequestId": "facctrq_61V8PvQ8sei5x8NrE16V8PrM6SSQCPwAY3c5lc3rEHnU",
+      "configuration": {
+        "locality": "us",
+        "naming_prefix": "hackathoninabox"
+      },
+      "linkedAt": "2026-07-30T21:58:25.927Z",
+      "providerId": "prvdr_61UVctyxfLOj4FpVw5Bmi",
+      "providerName": "Auth0",
+      "redirectUrl": null,
+      "requestedAt": "2026-07-30T21:58:25.926Z",
+      "status": "complete"
+    },
+    "netlify": {
+      "accountRequestId": "facctrq_61V8QdlaVP7vezMCi16V8PrM6SSQCPwAY3c5lc3rETMm",
+      "configuration": {},
+      "linkedAt": "2026-07-30T22:44:10.615Z",
+      "providerId": "prvdr_61UXju1taz9UCvkk95GEK",
+      "providerName": "Netlify",
+      "redirectUrl": null,
+      "requestedAt": "2026-07-30T22:44:10.614Z",
+      "status": "complete"
+    },
+    "openrouter": {
+      "accountRequestId": "facctrq_61V8QKn363ChuvV5y16V8PrM6SSQCPwAY3c5lc3rEUOu",
+      "configuration": {},
+      "linkedAt": "2026-07-30T22:24:34.000Z",
+      "providerId": "prvdr_61URImmFACEuDHEx651IO",
+      "providerName": "OpenRouter",
+      "redirectUrl": null,
+      "requestedAt": "2026-07-30T22:24:34.000Z",
+      "status": "complete"
+    },
+    "prisma": {
+      "accountRequestId": "facctrq_61V8PwvXSJTFyGafB16V8PrM6SSQCPwAY3c5lc3rENOy",
+      "configuration": {},
+      "linkedAt": "2026-07-30T21:59:54.865Z",
+      "providerId": "prvdr_61Ulq2NBoEkAzhMKC50vA",
+      "providerName": "Prisma",
+      "redirectUrl": null,
+      "requestedAt": "2026-07-30T21:59:54.865Z",
+      "status": "complete"
+    },
+    "railway": {
+      "accountRequestId": "facctrq_61V8PxZdJ43m4jsU516V8PrM6SSQCPwAY3c5lc3rEE0O",
+      "configuration": {},
+      "linkedAt": "2026-07-30T22:00:35.237Z",
+      "providerId": "prvdr_61UK2uWsoydL7tUBp57Fg",
+      "providerName": "Railway",
+      "redirectUrl": null,
+      "requestedAt": "2026-07-30T22:00:35.236Z",
+      "status": "complete"
+    }
+  },
+  "resources": {
+    "auth0-plan": {
+      "configuration": {},
+      "createdAt": "2026-07-30T21:58:29.161Z",
+      "lastRevealedAt": "2026-07-30T21:58:29.369Z",
+      "lastStatus": "complete",
+      "name": "auth0-plan",
+      "providerId": "prvdr_61UVctyxfLOj4FpVw5Bmi",
+      "providerName": "Auth0",
+      "resourceId": "fres_61V8PvWRys40Uhk4016V8PrM6SSQCPwAY3c5lc3rEUL2",
+      "serviceId": "free"
+    },
+    "idea-deploy-target": {
+      "configuration": {
+        "name": "hackathon-idea-demo"
+      },
+      "createdAt": "2026-07-30T22:44:11.497Z",
+      "lastRevealedAt": "2026-07-30T22:44:11.879Z",
+      "lastStatus": "complete",
+      "name": "idea-deploy-target",
+      "providerId": "prvdr_61UXju1taz9UCvkk95GEK",
+      "providerName": "Netlify",
+      "resourceId": "fres_61V8QdmKRIN4lYzfE16V8PrM6SSQCPwAY3c5lc3rE6DY",
+      "serviceId": "project"
+    },
+    "llm-provider": {
+      "configuration": {},
+      "createdAt": "2026-07-30T22:24:45.009Z",
+      "lastRevealedAt": "2026-07-30T22:24:45.215Z",
+      "lastStatus": "complete",
+      "name": "llm-provider",
+      "providerId": "prvdr_61URImmFACEuDHEx651IO",
+      "providerName": "OpenRouter",
+      "resourceId": "fres_61V8QKybxM2u40qoZ16V8PrM6SSQCPwAY3c5lc3rESQq",
+      "serviceId": "api"
+    },
+    "openrouter-plan": {
+      "configuration": {},
+      "createdAt": "2026-07-30T22:24:35.354Z",
+      "lastRevealedAt": "2026-07-30T22:24:35.639Z",
+      "lastStatus": "complete",
+      "name": "openrouter-plan",
+      "providerId": "prvdr_61URImmFACEuDHEx651IO",
+      "providerName": "OpenRouter",
+      "resourceId": "fres_61V8QKoBagzehpszf16V8PrM6SSQCPwAY3c5lc3rESxk",
+      "serviceId": "free"
+    },
+    "platform-auth": {
+      "configuration": {
+        "name": "hackathon-in-a-box"
+      },
+      "createdAt": "2026-07-30T21:59:37.226Z",
+      "lastRevealedAt": "2026-07-30T21:59:37.597Z",
+      "lastStatus": "complete",
+      "name": "platform-auth",
+      "providerId": "prvdr_61UVctyxfLOj4FpVw5Bmi",
+      "providerName": "Auth0",
+      "resourceId": "fres_61V8Pwb3DU5URGFkQ16V8PrM6SSQCPwAY3c5lc3rEUVs",
+      "serviceId": "client"
+    },
+    "platform-host": {
+      "configuration": {},
+      "createdAt": "2026-07-30T22:00:46.111Z",
+      "lastRevealedAt": null,
+      "lastStatus": "needs_information",
+      "name": "platform-host",
+      "providerId": "prvdr_61UK2uWsoydL7tUBp57Fg",
+      "providerName": "Railway",
+      "resourceId": "fres_61V8PxlbjOYBvGCY316V8PrM6SSQCPwAY3c5lc3rEPPs",
+      "serviceId": "hosting"
+    },
+    "primary-db": {
+      "configuration": {
+        "region": "us-east-1"
+      },
+      "createdAt": "2026-07-30T22:00:11.568Z",
+      "lastRevealedAt": "2026-07-30T22:00:11.877Z",
+      "lastStatus": "complete",
+      "name": "primary-db",
+      "providerId": "prvdr_61Ulq2NBoEkAzhMKC50vA",
+      "providerName": "Prisma",
+      "resourceId": "fres_61V8PxBm5NYPfduiX16V8PrM6SSQCPwAY3c5lc3rE6Sm",
+      "serviceId": "database"
+    },
+    "prisma-plan": {
+      "configuration": {},
+      "createdAt": "2026-07-30T21:59:55.992Z",
+      "lastRevealedAt": "2026-07-30T21:59:56.225Z",
+      "lastStatus": "complete",
+      "name": "prisma-plan",
+      "providerId": "prvdr_61Ulq2NBoEkAzhMKC50vA",
+      "providerName": "Prisma",
+      "resourceId": "fres_61V8PwxznYgMB5fnH16V8PrM6SSQCPwAY3c5lc3rE6qW",
+      "serviceId": "free"
+    },
+    "railway-plan": {
+      "configuration": {},
+      "createdAt": "2026-07-30T22:00:36.756Z",
+      "lastRevealedAt": "2026-07-30T22:00:37.062Z",
+      "lastStatus": "complete",
+      "name": "railway-plan",
+      "providerId": "prvdr_61UK2uWsoydL7tUBp57Fg",
+      "providerName": "Railway",
+      "resourceId": "fres_61V8PxbMJtooTkjVD16V8PrM6SSQCPwAY3c5lc3rEHku",
+      "serviceId": "free"
+    }
+  },
+  "managedProjectVariableEnvKeys": {
+    ".env": [
+      "APP_BASE_URL",
+      "AUTH0_SECRET",
+      "STRIPE_PRO_PRICE_ID",
+      "STRIPE_SECRET_KEY",
+      "STRIPE_WEBHOOK_SECRET"
+    ]
+  }
+}

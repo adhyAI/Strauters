@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "providers": {
+    "auth0": {
+      "name": "Auth0"
+    },
+    "netlify": {
+      "name": "Netlify"
+    },
+    "openrouter": {
+      "name": "OpenRouter"
+    },
+    "prisma": {
+      "name": "Prisma"
+    },
+    "railway": {
+      "name": "Railway"
+    }
+  },
+  "resources": {
+    "auth0-plan": {
+      "name": "auth0-plan",
+      "providerName": "Auth0",
+      "serviceId": "free"
+    },
+    "idea-deploy-target": {
+      "name": "idea-deploy-target",
+      "providerName": "Netlify",
+      "serviceId": "project"
+    },
+    "llm-provider": {
+      "name": "llm-provider",
+      "providerName": "OpenRouter",
+      "serviceId": "api"
+    },
+    "openrouter-plan": {
+      "name": "openrouter-plan",
+      "providerName": "OpenRouter",
+      "serviceId": "free"
+    },
+    "platform-auth": {
+      "name": "platform-auth",
+      "providerName": "Auth0",
+      "serviceId": "client"
+    },
+    "platform-host": {
+      "name": "platform-host",
+      "providerName": "Railway",
+      "serviceId": "hosting"
+    },
+    "primary-db": {
+      "name": "primary-db",
+      "providerName": "Prisma",
+      "serviceId": "database"
+    },
+    "prisma-plan": {
+      "name": "prisma-plan",
+      "providerName": "Prisma",
+      "serviceId": "free"
+    },
+    "railway-plan": {
+      "name": "railway-plan",
+      "providerName": "Railway",
+      "serviceId": "free"
+    }
+  },
+  "environments": {
+    "default": {
+      "output": ".env",
+      "resources": [
+        {
+          "resourceName": "auth0-plan"
+        },
+        {
+          "resourceName": "idea-deploy-target"
+        },
+        {
+          "resourceName": "llm-provider"
+        },
+        {
+          "resourceName": "openrouter-plan"
+        },
+        {
+          "resourceName": "platform-auth"
+        },
+        {
+          "resourceName": "platform-host"
+        },
+        {
+          "resourceName": "primary-db"
+        },
+        {
+          "resourceName": "prisma-plan"
+        },
+        {
+          "resourceName": "railway-plan"
+        }
+      ],
+      "variables": [
+        {
+          "variableName": "APP_BASE_URL",
+          "envKey": "APP_BASE_URL"
+        },
+        {
+          "variableName": "AUTH0_SECRET",
+          "envKey": "AUTH0_SECRET"
+        },
+        {
+          "variableName": "STRIPE_PRO_PRICE_ID",
+          "envKey": "STRIPE_PRO_PRICE_ID"
+        },
+        {
+          "variableName": "STRIPE_SECRET_KEY",
+          "envKey": "STRIPE_SECRET_KEY"
+        },
+        {
+          "variableName": "STRIPE_WEBHOOK_SECRET",
+          "envKey": "STRIPE_WEBHOOK_SECRET"
+        }
+      ]
+    }
+  },
+  "variables": {
+    "APP_BASE_URL": {
+      "name": "APP_BASE_URL",
+      "backendId": "fprjvar_61V8Q3W4y3NEXXLbE16V8PrM6SSQCPwAY3c5lc3rEWXA"
+    },
+    "AUTH0_SECRET": {
+      "name": "AUTH0_SECRET",
+      "backendId": "fprjvar_61V8Q3MYdlrgUV9kU16V8PrM6SSQCPwAY3c5lc3rEX20"
+    },
+    "STRIPE_PRO_PRICE_ID": {
+      "name": "STRIPE_PRO_PRICE_ID",
+      "backendId": "fprjvar_61V8QCQ9V9jfs6HVd16V8PrM6SSQCPwAY3c5lc3rERoO"
+    },
+    "STRIPE_SECRET_KEY": {
+      "name": "STRIPE_SECRET_KEY",
+      "backendId": "fprjvar_61V8QAiZ8F5LBCJsI16V8PrM6SSQCPwAY3c5lc3rE3I8"
+    },
+    "STRIPE_WEBHOOK_SECRET": {
+      "name": "STRIPE_WEBHOOK_SECRET",
+      "backendId": "fprjvar_61V8QE6Gvii2vKVLi16V8PrM6SSQCPwAY3c5lc3rE15M"
+    }
+  }
+}

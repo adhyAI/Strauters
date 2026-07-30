@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{{APP_NAME}}</title>
+<style>
+  :root { --accent: {{ACCENT_COLOR}}; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #f8f8f9;
+    color: #18181b;
+  }
+  header {
+    padding: 32px 24px 16px;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  h1 { margin: 0 0 4px; font-size: 28px; }
+  p.tagline { margin: 0; color: #52525b; }
+  main { max-width: 880px; margin: 0 auto; padding: 0 24px 48px; }
+  form {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 24px 0;
+    padding: 16px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e4e4e7;
+  }
+  input {
+    flex: 1;
+    min-width: 140px;
+    padding: 10px 12px;
+    border: 1px solid #d4d4d8;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  button.secondary {
+    background: transparent;
+    color: #71717a;
+    text-decoration: underline;
+    padding: 4px;
+  }
+  table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e4e4e7; }
+  th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid #f4f4f5; font-size: 14px; }
+  th { background: #fafafa; color: #52525b; font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  .empty { text-align: center; padding: 40px; color: #a1a1aa; }
+</style>
+</head>
+<body>
+<header>
+  <h1>{{APP_NAME}}</h1>
+  <p class="tagline">{{TAGLINE}}</p>
+</header>
+<main>
+  <form id="add-form"></form>
+  <table>
+    <thead><tr id="table-head"></tr></thead>
+    <tbody id="table-body"></tbody>
+  </table>
+</main>
+<script>
+  const FIELDS = {{ENTITY_FIELDS_JSON}};
+  const STORAGE_KEY = "hackathon-crud-demo";
+
+  function load() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
+    catch { return []; }
+  }
+  function save(rows) { localStorage.setItem(STORAGE_KEY, JSON.stringify(rows)); }
+
+  function renderHead() {
+    const head = document.getElementById("table-head");
+    head.innerHTML = FIELDS.map((f) => `<th>${f}</th>`).join("") + "<th></th>";
+  }
+
+  function renderForm() {
+    const form = document.getElementById("add-form");
+    form.innerHTML =
+      FIELDS.map((f) => `<input name="${f}" placeholder="${f}" required />`).join("") +
+      '<button type="submit">Add</button>';
+    form.onsubmit = (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      const rows = load();
+      rows.push(data);
+      save(rows);
+      form.reset();
+      renderBody();
+    };
+  }
+
+  function renderBody() {
+    const rows = load();
+    const body = document.getElementById("table-body");
+    if (rows.length === 0) {
+      body.innerHTML = `<tr><td class="empty" colspan="${FIELDS.length + 1}">No entries yet. Add your first one above.</td></tr>`;
+      return;
+    }
+    body.innerHTML = rows
+      .map(
+        (row, i) =>
+          `<tr>${FIELDS.map((f) => `<td>${row[f] ?? ""}</td>`).join("")}<td><button class="secondary" onclick="removeRow(${i})">Remove</button></td></tr>`
+      )
+      .join("");
+  }
+
+  function removeRow(i) {
+    const rows = load();
+    rows.splice(i, 1);
+    save(rows);
+    renderBody();
+  }
+  window.removeRow = removeRow;
+
+  renderHead();
+  renderForm();
+  renderBody();
+</script>
+</body>
+</html>
