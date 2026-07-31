@@ -10,4 +10,10 @@ if (!process.env.APP_BASE_URL) {
   }
 }
 
-export const auth0 = new Auth0Client();
+export const auth0 = new Auth0Client({
+  // Always show the Auth0 Universal Login screen instead of silently
+  // completing via an existing SSO session on the tenant.
+  authorizationParameters: {
+    prompt: "login",
+  },
+});
