@@ -30,9 +30,9 @@ export async function deployTemplate(
   const html = await renderTemplateToString(templateId, config);
   await fsp.writeFile(path.join(workDir, "index.html"), html, "utf-8");
 
-  const token = process.env.VERCEL_TOKEN;
-  const projectId = process.env.VERCEL_PROJECT_ID;
-  const orgId = process.env.VERCEL_ORG_ID;
+  const token = process.env.GENERATED_APP_HOST_TOKEN;
+  const projectId = process.env.GENERATED_APP_HOST_PROJECT_ID;
+  const orgId = process.env.GENERATED_APP_HOST_ORG_ID;
   if (!token || !projectId) {
     throw new Error(
       "Vercel credentials not found -- was `stripe projects add vercel/project` run?"

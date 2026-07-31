@@ -59,6 +59,11 @@
       "providerName": "Railway",
       "serviceId": "hosting"
     },
+    "platform-vercel-host": {
+      "name": "platform-vercel-host",
+      "providerName": "Vercel",
+      "serviceId": "project"
+    },
     "primary-db": {
       "name": "primary-db",
       "providerName": "Prisma",
@@ -116,6 +121,9 @@
         },
         {
           "resourceName": "platform-host"
+        },
+        {
+          "resourceName": "platform-vercel-host"
         },
         {
           "resourceName": "primary-db"

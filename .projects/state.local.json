@@ -167,6 +167,19 @@
       "resourceId": "fres_61V8PxlbjOYBvGCY316V8PrM6SSQCPwAY3c5lc3rEPPs",
       "serviceId": "hosting"
     },
+    "platform-vercel-host": {
+      "configuration": {
+        "name": "hackathon-in-a-box"
+      },
+      "createdAt": "2026-07-31T00:09:28.170Z",
+      "lastRevealedAt": "2026-07-31T00:09:28.503Z",
+      "lastStatus": "complete",
+      "name": "platform-vercel-host",
+      "providerId": "prvdr_61ULUAr4zlQgZkvXY5LsG",
+      "providerName": "Vercel",
+      "resourceId": "fres_61V8RyIRSFuuHDny516V8PrM6SSQCPwAY3c5lc3rECsy",
+      "serviceId": "project"
+    },
     "primary-db": {
       "configuration": {
         "region": "us-east-1"

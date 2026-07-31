@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^4.26.0",
@@ -31,7 +32,6 @@
     "dotenv": "^17.4.2",
     "eslint": "^9",
     "eslint-config-next": "16.2.12",
-    "netlify-cli": "^27.0.1",
     "prisma": "^7.9.1",
     "tailwindcss": "^4",
     "typescript": "^5"

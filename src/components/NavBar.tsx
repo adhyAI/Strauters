@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { auth0 } from "@/lib/auth0";
+import { getCurrentUser } from "@/lib/getCurrentUser";
+import { buildUpgradeLink } from "@/lib/paymentLink";
 
 export default async function NavBar() {
   const session = await auth0.getSession();
+  const user = session ? await getCurrentUser() : null;
 
   return (
     <header className="sticky top-0 z-10 border-b border-zinc-200 bg-white/80 backdrop-blur dark:border-zinc-800 dark:bg-black/80">
@@ -32,6 +35,17 @@ export default async function NavBar() {
               History
             </Link>
             <div className="flex items-center gap-3 border-l border-zinc-200 pl-6 dark:border-zinc-800">
+              {user?.subscriptionTier === "pro" && (
+                <span className="rounded-full bg-accent/15 px-2.5 py-1 text-xs font-medium text-accent">
+                  Pro
+                </span>
+              )}
+              <a
+                href={user ? buildUpgradeLink(user.id) : "#"}
+                className="rounded-full bg-amber-600 px-3 py-1 text-xs font-medium text-white hover:bg-amber-700"
+              >
+                Upgrade $5/mo
+              </a>
               <span className="hidden text-zinc-500 sm:inline dark:text-zinc-500">
                 {session.user.email}
               </span>
