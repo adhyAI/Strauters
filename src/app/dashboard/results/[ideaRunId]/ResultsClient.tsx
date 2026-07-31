@@ -3,11 +3,13 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import type { SynthesizedIdea } from "@/lib/panel";
+import { buildUpgradeLink } from "@/lib/paymentLink";
 
 interface Props {
   ideaRunId: string;
   ideas: SynthesizedIdea[];
   subscriptionTier: string;
+  userId: string;
   alreadySelected: boolean;
   selectedIdeaId?: string;
 }
@@ -22,13 +24,13 @@ export default function ResultsClient({
   ideaRunId,
   ideas,
   subscriptionTier,
+  userId,
   alreadySelected,
   selectedIdeaId,
 }: Props) {
   const router = useRouter();
   const [loadingIndex, setLoadingIndex] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [checkoutLoading, setCheckoutLoading] = useState(false);
 
   async function selectIdea(index: number) {
     setError(null);
@@ -51,17 +53,6 @@ export default function ResultsClient({
     }
   }
 
-  async function upgrade() {
-    setCheckoutLoading(true);
-    try {
-      const res = await fetch("/api/checkout", { method: "POST" });
-      const data = await res.json();
-      if (data.url) window.location.href = data.url;
-    } finally {
-      setCheckoutLoading(false);
-    }
-  }
-
   if (alreadySelected && selectedIdeaId) {
     router.replace(`/dashboard/brief/${selectedIdeaId}`);
     return null;
@@ -75,13 +66,12 @@ export default function ResultsClient({
             You&apos;re on the free tier &mdash; you can pick an idea and get
             the brief, but deploying it live needs Pro.
           </span>
-          <button
-            onClick={upgrade}
-            disabled={checkoutLoading}
-            className="ml-4 shrink-0 rounded-full bg-amber-600 px-4 py-2 text-xs font-medium text-white hover:bg-amber-700 disabled:opacity-50"
+          <a
+            href={buildUpgradeLink(userId)}
+            className="ml-4 shrink-0 rounded-full bg-amber-600 px-4 py-2 text-xs font-medium text-white hover:bg-amber-700"
           >
-            {checkoutLoading ? "Loading..." : "Upgrade $5/mo"}
-          </button>
+            Upgrade $5/mo
+          </a>
         </div>
       )}
 
@@ -109,7 +99,7 @@ export default function ResultsClient({
           <button
             onClick={() => selectIdea(i)}
             disabled={loadingIndex !== null}
-            className="mt-2 self-start rounded-full bg-foreground px-5 py-2 text-sm text-background hover:bg-[#383838] disabled:opacity-50 dark:hover:bg-[#ccc]"
+            className="mt-2 self-start rounded-full bg-accent px-5 py-2 text-sm text-accent-foreground hover:opacity-90 disabled:opacity-50"
           >
             {loadingIndex === i ? "Selecting..." : "Pick this idea"}
           </button>

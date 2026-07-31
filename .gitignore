@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# netlify (local build artifacts from an earlier deploy attempt)
+.netlify/
+
 # stripe projects cli local state/cache
 
 # typescript

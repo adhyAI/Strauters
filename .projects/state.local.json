@@ -61,6 +61,26 @@
       "redirectUrl": null,
       "requestedAt": "2026-07-30T22:00:35.236Z",
       "status": "complete"
+    },
+    "render": {
+      "accountRequestId": "facctrq_61V8QyhSiRzqckeE916V8PrM6SSQCPwAY3c5lc3rEPw8",
+      "configuration": {},
+      "linkedAt": "2026-07-30T23:05:48.169Z",
+      "providerId": "prvdr_61UVwArXdJpejOfkn5POi",
+      "providerName": "Render",
+      "redirectUrl": null,
+      "requestedAt": "2026-07-30T23:05:48.169Z",
+      "status": "complete"
+    },
+    "vercel": {
+      "accountRequestId": "facctrq_61V8Rn3yuXIlyAVZD16V8PrM6SSQCPwAY3c5lc3rEPC4",
+      "configuration": {},
+      "linkedAt": "2026-07-30T23:57:52.530Z",
+      "providerId": "prvdr_61ULUAr4zlQgZkvXY5LsG",
+      "providerName": "Vercel",
+      "redirectUrl": null,
+      "requestedAt": "2026-07-30T23:57:52.530Z",
+      "status": "complete"
     }
   },
   "resources": {
@@ -74,6 +94,19 @@
       "providerName": "Auth0",
       "resourceId": "fres_61V8PvWRys40Uhk4016V8PrM6SSQCPwAY3c5lc3rEUL2",
       "serviceId": "free"
+    },
+    "generated-app-host": {
+      "configuration": {
+        "name": "hackathon-idea-demo"
+      },
+      "createdAt": "2026-07-30T23:58:24.647Z",
+      "lastRevealedAt": "2026-07-30T23:58:24.926Z",
+      "lastStatus": "complete",
+      "name": "generated-app-host",
+      "providerId": "prvdr_61ULUAr4zlQgZkvXY5LsG",
+      "providerName": "Vercel",
+      "resourceId": "fres_61V8RnbA9zcliex9v16V8PrM6SSQCPwAY3c5lc3rE72W",
+      "serviceId": "project"
     },
     "idea-deploy-target": {
       "configuration": {
@@ -114,13 +147,13 @@
       "configuration": {
         "name": "hackathon-in-a-box"
       },
-      "createdAt": "2026-07-30T21:59:37.226Z",
-      "lastRevealedAt": "2026-07-30T21:59:37.597Z",
+      "createdAt": "2026-07-30T23:27:37.902Z",
+      "lastRevealedAt": "2026-07-30T23:27:38.251Z",
       "lastStatus": "complete",
       "name": "platform-auth",
       "providerId": "prvdr_61UVctyxfLOj4FpVw5Bmi",
       "providerName": "Auth0",
-      "resourceId": "fres_61V8Pwb3DU5URGFkQ16V8PrM6SSQCPwAY3c5lc3rEUVs",
+      "resourceId": "fres_61V8RJmghiKLTu3Gk16V8PrM6SSQCPwAY3c5lc3rE46q",
       "serviceId": "client"
     },
     "platform-host": {
@@ -158,6 +191,28 @@
       "resourceId": "fres_61V8PwxznYgMB5fnH16V8PrM6SSQCPwAY3c5lc3rE6qW",
       "serviceId": "free"
     },
+    "railway-hosting": {
+      "configuration": {},
+      "createdAt": "2026-07-30T23:00:10.654Z",
+      "lastRevealedAt": "2026-07-30T23:00:10.965Z",
+      "lastStatus": "complete",
+      "name": "railway-hosting",
+      "providerId": "prvdr_61UK2uWsoydL7tUBp57Fg",
+      "providerName": "Railway",
+      "resourceId": "fres_61V8Qs234JdL20LLr16V8PrM6SSQCPwAY3c5lc3rEVNw",
+      "serviceId": "hosting"
+    },
+    "railway-hosting-2": {
+      "configuration": {},
+      "createdAt": "2026-07-30T22:59:08.360Z",
+      "lastRevealedAt": null,
+      "lastStatus": "needs_information",
+      "name": "railway-hosting-2",
+      "providerId": "prvdr_61UK2uWsoydL7tUBp57Fg",
+      "providerName": "Railway",
+      "resourceId": "fres_61V8QsF4cCuteUgDt16V8PrM6SSQCPwAY3c5lc3rEKRs",
+      "serviceId": "hosting"
+    },
     "railway-plan": {
       "configuration": {},
       "createdAt": "2026-07-30T22:00:36.756Z",
@@ -168,12 +223,45 @@
       "providerName": "Railway",
       "resourceId": "fres_61V8PxbMJtooTkjVD16V8PrM6SSQCPwAY3c5lc3rEHku",
       "serviceId": "free"
+    },
+    "render-hosting": {
+      "configuration": {
+        "name": "strauters",
+        "repo": "https://github.com/adhyAI/Strauters.git",
+        "branch": "main",
+        "runtime": "node",
+        "build_command": "npm install && npx prisma generate && npm run build",
+        "start_command": "npm start"
+      },
+      "createdAt": "2026-07-30T23:05:51.498Z",
+      "lastRevealedAt": "2026-07-30T23:05:51.831Z",
+      "lastStatus": "complete",
+      "name": "render-hosting",
+      "providerId": "prvdr_61UVwArXdJpejOfkn5POi",
+      "providerName": "Render",
+      "resourceId": "fres_61V8Qyi0wWjVi1iRs16V8PrM6SSQCPwAY3c5lc3rE3t2",
+      "serviceId": "web-service"
+    },
+    "vercel-plan": {
+      "configuration": {},
+      "createdAt": "2026-07-30T23:57:54.012Z",
+      "lastRevealedAt": "2026-07-30T23:57:54.441Z",
+      "lastStatus": "complete",
+      "name": "vercel-plan",
+      "providerId": "prvdr_61ULUAr4zlQgZkvXY5LsG",
+      "providerName": "Vercel",
+      "resourceId": "fres_61V8Rn7PjV5zduTLm16V8PrM6SSQCPwAY3c5lc3rE0lk",
+      "serviceId": "hobby"
     }
   },
   "managedProjectVariableEnvKeys": {
     ".env": [
       "APP_BASE_URL",
+      "AUTH0_CLIENT_ID",
+      "AUTH0_CLIENT_SECRET",
+      "AUTH0_DOMAIN",
       "AUTH0_SECRET",
+      "NEXT_PUBLIC_STRIPE_PAYMENT_LINK_URL",
       "STRIPE_PRO_PRICE_ID",
       "STRIPE_SECRET_KEY",
       "STRIPE_WEBHOOK_SECRET"

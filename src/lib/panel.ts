@@ -42,12 +42,22 @@ function buildTeamContext(input: PanelInput): string {
   return `Hackathon brief:\n${input.hackathonDescription}\n\nTeam:\n${memberLines.join("\n")}`;
 }
 
-export async function runPersonaPanel(input: PanelInput): Promise<PersonaTake[]> {
+export interface PanelProgressHooks {
+  onPersonaStart?: (personaId: string, displayName: string) => void;
+  onPersonaDone?: (take: PersonaTake) => void;
+}
+
+export async function runPersonaPanel(
+  input: PanelInput,
+  hooks: PanelProgressHooks = {}
+): Promise<PersonaTake[]> {
   const context = buildTeamContext(input);
 
   // Sequential (not Promise.all) to avoid bursting the free-tier shared rate limit.
   const results: PersonaTake[] = [];
   for (const persona of PERSONAS) {
+    hooks.onPersonaStart?.(persona.id, persona.displayName);
+
     const completion = await chatCompletionWithRetry({
       model: LLM_MODEL,
       messages: [
@@ -59,12 +69,14 @@ export async function runPersonaPanel(input: PanelInput): Promise<PersonaTake[]>
       ],
     });
 
-    results.push({
+    const take: PersonaTake = {
       personaId: persona.id,
       displayName: persona.displayName,
       disclaimer: persona.disclaimer,
       take: completion.choices[0]?.message?.content?.trim() ?? "",
-    });
+    };
+    results.push(take);
+    hooks.onPersonaDone?.(take);
   }
 
   return results;

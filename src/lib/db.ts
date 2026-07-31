@@ -8,7 +8,11 @@ function createPrismaClient() {
   if (!connectionString) {
     throw new Error("PRISMA_DATABASE_URL is not set");
   }
-  const adapter = new PrismaPg({ connectionString });
+  const normalizedUrl = connectionString.replace(
+    /([?&]sslmode=)(prefer|require|verify-ca)\b/,
+    "$1verify-full"
+  );
+  const adapter = new PrismaPg({ connectionString: normalizedUrl });
   return new PrismaClient({ adapter });
 }
 

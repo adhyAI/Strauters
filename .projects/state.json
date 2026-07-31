@@ -15,6 +15,12 @@
     },
     "railway": {
       "name": "Railway"
+    },
+    "render": {
+      "name": "Render"
+    },
+    "vercel": {
+      "name": "Vercel"
     }
   },
   "resources": {
@@ -22,6 +28,11 @@
       "name": "auth0-plan",
       "providerName": "Auth0",
       "serviceId": "free"
+    },
+    "generated-app-host": {
+      "name": "generated-app-host",
+      "providerName": "Vercel",
+      "serviceId": "project"
     },
     "idea-deploy-target": {
       "name": "idea-deploy-target",
@@ -58,10 +69,30 @@
       "providerName": "Prisma",
       "serviceId": "free"
     },
+    "railway-hosting": {
+      "name": "railway-hosting",
+      "providerName": "Railway",
+      "serviceId": "hosting"
+    },
+    "railway-hosting-2": {
+      "name": "railway-hosting-2",
+      "providerName": "Railway",
+      "serviceId": "hosting"
+    },
     "railway-plan": {
       "name": "railway-plan",
       "providerName": "Railway",
       "serviceId": "free"
+    },
+    "render-hosting": {
+      "name": "render-hosting",
+      "providerName": "Render",
+      "serviceId": "web-service"
+    },
+    "vercel-plan": {
+      "name": "vercel-plan",
+      "providerName": "Vercel",
+      "serviceId": "hobby"
     }
   },
   "environments": {
@@ -70,6 +101,9 @@
       "resources": [
         {
           "resourceName": "auth0-plan"
+        },
+        {
+          "resourceName": "generated-app-host"
         },
         {
           "resourceName": "idea-deploy-target"
@@ -81,9 +115,6 @@
           "resourceName": "openrouter-plan"
         },
         {
-          "resourceName": "platform-auth"
-        },
-        {
           "resourceName": "platform-host"
         },
         {
@@ -93,7 +124,16 @@
           "resourceName": "prisma-plan"
         },
         {
+          "resourceName": "railway-hosting"
+        },
+        {
           "resourceName": "railway-plan"
+        },
+        {
+          "resourceName": "render-hosting"
+        },
+        {
+          "resourceName": "vercel-plan"
         }
       ],
       "variables": [
@@ -102,8 +142,24 @@
           "envKey": "APP_BASE_URL"
         },
         {
+          "variableName": "AUTH0_CLIENT_ID",
+          "envKey": "AUTH0_CLIENT_ID"
+        },
+        {
+          "variableName": "AUTH0_CLIENT_SECRET",
+          "envKey": "AUTH0_CLIENT_SECRET"
+        },
+        {
+          "variableName": "AUTH0_DOMAIN",
+          "envKey": "AUTH0_DOMAIN"
+        },
+        {
           "variableName": "AUTH0_SECRET",
           "envKey": "AUTH0_SECRET"
+        },
+        {
+          "variableName": "NEXT_PUBLIC_STRIPE_PAYMENT_LINK_URL",
+          "envKey": "NEXT_PUBLIC_STRIPE_PAYMENT_LINK_URL"
         },
         {
           "variableName": "STRIPE_PRO_PRICE_ID",
@@ -125,9 +181,25 @@
       "name": "APP_BASE_URL",
       "backendId": "fprjvar_61V8Q3W4y3NEXXLbE16V8PrM6SSQCPwAY3c5lc3rEWXA"
     },
+    "AUTH0_CLIENT_ID": {
+      "name": "AUTH0_CLIENT_ID",
+      "backendId": "fprjvar_61V8RPMe09KsBmDV116V8PrM6SSQCPwAY3c5lc3rE8Z6"
+    },
+    "AUTH0_CLIENT_SECRET": {
+      "name": "AUTH0_CLIENT_SECRET",
+      "backendId": "fprjvar_61V8RPRge0GMFCByU16V8PrM6SSQCPwAY3c5lc3rEB4S"
+    },
+    "AUTH0_DOMAIN": {
+      "name": "AUTH0_DOMAIN",
+      "backendId": "fprjvar_61V8RPHf6dgh5aY8G16V8PrM6SSQCPwAY3c5lc3rE8oa"
+    },
     "AUTH0_SECRET": {
       "name": "AUTH0_SECRET",
       "backendId": "fprjvar_61V8Q3MYdlrgUV9kU16V8PrM6SSQCPwAY3c5lc3rEX20"
+    },
+    "NEXT_PUBLIC_STRIPE_PAYMENT_LINK_URL": {
+      "name": "NEXT_PUBLIC_STRIPE_PAYMENT_LINK_URL",
+      "backendId": "fprjvar_61V8Rm1qj9CA1dY9116V8PrM6SSQCPwAY3c5lc3rE1EG"
     },
     "STRIPE_PRO_PRICE_ID": {
       "name": "STRIPE_PRO_PRICE_ID",
